@@ -1,0 +1,108 @@
+.mainContainer {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: left;
+}
+
+.menubar {
+  display: flex;
+  flex-direction: column;
+  /* z-index: 200; */
+  align-items: center;
+  overflow: auto;
+  width: 80px;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  border-right: 1px solid black;
+}
+.list_navbar {
+  list-style-type: none;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.logo_box {
+  display: flex;
+  width: 80px;
+  flex: 0 0 auto;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  margin: 0px;
+}
+.list_navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  width: 80px;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+li {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  margin: 0px;
+}
+.btn_side {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+.home_icon {
+  width: 100%;
+  height: 100%;
+}
+.container {
+  display: flex;
+  width: calc(100% - 80px);
+  height: 100vh;
+}
+
+.map_wrap {
+  width: 30%;
+  height: 100%;
+}
+
+.exmap {
+  height: 100%;
+  width: 100%;
+}
+
+.cctvzone {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 100%;
+  background-color: bisque;
+}
+
+.cctv_list {
+  display: flex;
+  flex-wrap: wrap;
+  /* align-content: flex-start; */
+  overflow-x: auto;
+  /* flex-shrink: 1; */
+  width: 100%;
+  height: 85%;
+  background-color: blue;
+  /* justify-content: left; */
+  /* align-items: top; */
+}
+.smallContainer {
+  display: flex;
+  flex-direction: row;
+  height: 15%;
+}
