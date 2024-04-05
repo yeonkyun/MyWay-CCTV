@@ -17,7 +17,7 @@ function Home() {
         <ul className={styles.list_navbar}>
           <Btn_menu img_src={"image/baseline_search_black_24dp.jpg"} alt_text="search" />
           <Btn_menu img_src={"image/baseline_star_black_24dp.jpg"} alt_text="star" />
-          <Btn_menu img_src={"image/baseline_more_horiz_black_24dp.jpg"} alt_text="star" />
+          <Btn_menu img_src={"image/baseline_more_horiz_black_24dp.jpg"} alt_text="더보기" />
         </ul>
       </header>
       <div className={styles.container}>
