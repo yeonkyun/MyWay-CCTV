@@ -3,7 +3,6 @@ import Cctv from '../components/Cctv.js';
 import Smallcctv from '../components/Smallcctv.js';
 import Kakao from '../components/Kakao.js';
 import Btn_menu from '../components/sidebar/Btn_menu.js';
-import Test_cctv from '../components/Test_cctv.js';
 function Home() {
 
   return (
@@ -30,9 +29,7 @@ function Home() {
             <Cctv />
             <Cctv />
             <Cctv />
-            <Test_cctv />
           </div>
-          <button class="next-button">다음</button>
           <div className={styles.smallContainer}>
             <Smallcctv />
             <Smallcctv />
