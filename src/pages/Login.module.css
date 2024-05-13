@@ -1,0 +1,25 @@
+.LoginConponents {
+  display: flex;
+  flex-direction: column;
+  background: darkcyan;
+  width: 100%;
+  height: 100%;
+}
+.logo {
+  margin-top: 100px;
+  margin-left: 40%;
+  font-size: 50px;
+}
+
+.IDloginInput {
+  margin-top: 40px;
+  margin-left: 35%;
+
+  width: 200px;
+  height: 40px;
+}
+
+.PSloginInput {
+  width: 200px;
+  height: 40px;
+}
