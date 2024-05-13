@@ -7,7 +7,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 
-import { signIn } from "../Auth";
+import { signIn } from "../auth";
 import LoginForm from "./LoginForm";
 import LogoutButton from "./LogoutButton";
 
