@@ -1,25 +1,30 @@
-.LoginConponents {
+.header {
   display: flex;
-  flex-direction: column;
-  background: darkcyan;
-  width: 100%;
-  height: 100%;
+  /* justify-content: center; */
+  /* align-items: center; */
+  padding: 0.375rem 0.75rem;
+  background-color: gray;
+  font-size: 1rem;
+  line-height: 1.5;
 }
-.logo {
-  margin-top: 100px;
-  margin-left: 40%;
-  font-size: 50px;
+.Z3r0F1agLink {
+  font-size: 2rem;
 }
-
-.IDloginInput {
-  margin-top: 40px;
-  margin-left: 35%;
-
-  width: 200px;
-  height: 40px;
+.LoginLink {
+  margin-top: 10px;
+  margin-left: 50%;
 }
-
-.PSloginInput {
-  width: 200px;
-  height: 40px;
+.SignupLink {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.main {
+  outline: dashed 1px black;
+  display: flex;
+  justify-content: center;
+  /* align-items: center;
+  justify-content: center;
+  position: absolute;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr; */
 }

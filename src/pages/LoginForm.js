@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import styles from "./LoginForm.module.css";
 
 function LoginForm({ authenticated, login }) {
   const [email, setEmail] = useState("");
@@ -21,22 +22,26 @@ function LoginForm({ authenticated, login }) {
   if (authenticated) return navigate(from);
 
   return (
-    <>
-      <h1>Login</h1>
+    <div className={styles.div}>
+      <h1 className={styles.Z3r0F1ag}>Z3r0F1ag</h1>
       <input
+        className={styles.email}
         value={email}
         onChange={({ target: { value } }) => setEmail(value)}
         type="text"
         placeholder="email"
       />
       <input
+        className={styles.password}
         value={password}
         onChange={({ target: { value } }) => setPassword(value)}
         type="password"
         placeholder="password"
       />
-      <button onClick={handleClick}>Login</button>
-    </>
+      <button onClick={handleClick} className={styles.Loginbtn}>
+        Login
+      </button>
+    </div>
   );
 }
 
