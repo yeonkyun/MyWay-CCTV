@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./LoginForm.module.css";
+import { Link } from "react-router-dom";
+// import SignUp from "./SignUp";
 
 function LoginForm({ authenticated, login }) {
   const [email, setEmail] = useState("");
@@ -41,6 +43,19 @@ function LoginForm({ authenticated, login }) {
       <button onClick={handleClick} className={styles.Loginbtn}>
         Login
       </button>
+      <div className={styles.underbar}>
+        <Link to="/아이디찾기" className={styles.IDfind}>
+          아이디 찾기
+        </Link>
+        <h4>|</h4>
+        <Link to="/비밀번호찾기" className={styles.PWfind}>
+          비밀번호 찾기
+        </Link>
+        <h4>|</h4>
+        <Link to="/회원가입" className={styles.signup}>
+          회원가입
+        </Link>
+      </div>
     </div>
   );
 }

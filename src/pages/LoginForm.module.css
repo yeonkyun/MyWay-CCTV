@@ -6,20 +6,70 @@
 .email {
   margin-top: 50px;
   text-align: center;
-  width: 200px;
-  height: 30px;
+  width: 100%;
+  height: 56px;
+  border-radius: 6px;
+  font-size: 18px;
 }
 .password {
-  margin-top: 50px;
   text-align: center;
-  width: 200px;
-  height: 30px;
+  width: 100%;
+  height: 56px;
+  border-radius: 6px;
+  font-size: 18px;
+  margin-top: 10px;
 }
 .Loginbtn {
-  width: 50px;
-  height: 30px;
+  width: 100%;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 20px;
+  justify-content: center;
+  border-radius: 6px;
+  background-color: blue;
+  color: white;
+  /* butten {
+    display: flex;
+    height: 100px;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 6px;
+    background: rgb(61, 88, 245);
+    border: 1px solid $grey88;
+    cursor: pointer;
+    font-family: Apple SD Gothic Neo;
+    font-size: 40px;
+    font-weight: 800;
+    color: white;
+  } */
 }
+.underbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.IDfind {
+  text-decoration: inherit;
+  margin-right: 10px;
+}
+.PWfind {
+  text-decoration: inherit;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.signup {
+  text-decoration: inherit;
+  margin-left: 10px;
+}
+
 /* .div {
+  display: flex;
+  flex: ;
   align-items: center;
   justify-content: center;
   position: absolute;

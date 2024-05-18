@@ -8,15 +8,19 @@
   line-height: 1.5;
 }
 .Z3r0F1agLink {
+  color: inherit;
+  text-decoration: inherit;
   font-size: 2rem;
 }
 .LoginLink {
+  color: inherit;
+  text-decoration: inherit;
   margin-top: 10px;
-  margin-left: 50%;
+  margin-left: 80%;
 }
-.SignupLink {
+.SignUpLink {
   margin-top: 10px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .main {
   outline: dashed 1px black;
