@@ -65,7 +65,10 @@ function Kakao(coord) {
         const kind = cctvInfo ? cctvInfo.KIND : 'Unknown';
 
         /* cctv 새창에서 띄우기 */
-        let cctv_Url = `https://www.utic.go.kr/view/map/openDataCctvStream.jsp?key=${process.env.REACT_APP_UTIC_CCTV_APP_KEY}&cctvid=${List[i].cctvid}&cctvName=${encodeURIComponent(List[i].cctvname)}&kind=${kind}&cctvip=${cctvip}&cctvch=${cctvch}&id=null&cctvpasswd=null&cctvport=null`;
+        // let cctv_url = `http://www.utic.go.kr/view/map/cctvStream.jsp?cctvid=L010001&cctvName=상암사거리&kind=Seoul&cctvip=null&cctvch=51&id=1&cctvpasswd=null&cctvport=null`
+        // let cctv_url = `http://www.utic.go.kr/view/map/cctvStream.jsp?cctvid=L010001&cctvName=상암사거리&kind=Seoul&cctvip=null&cctvch=51&id=1&cctvpasswd=null&cctvport=null`
+        // let cctv_Url = `https://www.utic.go.kr/view/map/openDataCctvStream.jsp?key=${process.env.REACT_APP_UTIC_CCTV_APP_KEY}&cctvid=${List[i].cctvid}&cctvName=${encodeURIComponent(List[i].cctvname)}&kind=${kind}&cctvip=${cctvip}&cctvch=${cctvch}&id=null&cctvpasswd=null&cctvport=null`;
+        let cctv_Url = `https://www.utic.go.kr/view/map/cctvStream.jsp?&cctvid=${List[i].cctvid}&cctvName=${encodeURIComponent(List[i].cctvname)}&kind=${kind}&cctvip=${cctvip}&cctvch=${cctvch}&id=null&cctvpasswd=null&cctvport=null`;
         kakao.maps.event.addListener(newMarker, 'click', function () {
           let width = 320;
           let height = 300;
