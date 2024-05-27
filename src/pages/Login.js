@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom"; // useNavigate 삭제
-import { signIn } from "../auth";
+import { signIn } from "../user";
 import LoginForm from "./LoginForm";
 import LogoutButton from "./LogoutButton";
-import styles from "./Login.module.css";
-import SignUp from "./SignUp"; // SignUp 컴포넌트 import
+import styles from "../Styles/Login.module.css";
+import SignUp from "./SignUp";
 import SurchId from "./SurchId";
+import Home from "./Home";
 
 function Login() {
   const [user, setUser] = useState(null);
@@ -20,7 +21,7 @@ function Login() {
   return (
     <div>
       <header className={styles.header}>
-        <Link to="/home" className={styles.Z3r0F1agLink}>
+        <Link to="/" className={styles.Z3r0F1agLink}>
           Z3r0F1ag
         </Link>
         {authenticated ? (
@@ -36,6 +37,7 @@ function Login() {
       <hr />
       <main className={styles.main}>
         <Routes>
+          <Route path="/" element={<Home Home={Home} />} />
           <Route path="/회원가입" element={<SignUp SignUp={SignUp} />} />
           <Route path="/login" element={<LoginForm login={login} />} />
           <Route path="아이디찾기" element={<SurchId SurchId={SurchId} />} />

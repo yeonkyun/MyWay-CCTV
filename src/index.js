@@ -9,3 +9,4 @@ root.render(
     <App />
   </Router>
 );
+db.User = require("./user")(sequelize, Sequelize);

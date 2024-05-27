@@ -1,4 +1,4 @@
-import styles from "./Home.module.css";
+import styles from "../Styles/Home.module.css";
 import Cctv from "../components/Cctv.js";
 import Smallcctv from "../components/Smallcctv.js";
 import Kakao from "../components/Kakao.js";

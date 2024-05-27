@@ -1,7 +1,7 @@
 // // import "./SignUp.css";
-import { Link, useNavigate } from "react-router-dom";
+// import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
-import styles from "./SignUp.module.css";
+import styles from "../Styles/SignUp.module.css";
 
 // // import API from "../API";
 
@@ -242,65 +242,123 @@ function SignUp() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div>
       <div>
-        <h1 className={styles.Z3r0F1ag}>Z3r0F1ag</h1>
-        <label>Email:</label>
-        <input
-          type="email"
-          name="email"
-          value={form.email}
-          onChange={handleChange}
-        />
+        <h3 id="signup_title"> 회원가입 (Signup) </h3>
       </div>
+      <div className="Signup">
+        <div>
+          {/* 아이디 */}
+          <div>
+            <h5> 아이디 </h5>
+            <input type="text" maxLength="20" name="signup_id" />
+          </div>
+
+          {/* 비밀번호 */}
+          <div>
+            <h5> 비밀번호 </h5>
+            <input type="password" maxLength="15" name="signup_password" />
+          </div>
+
+          {/* 비밀번호 */}
+          <div>
+            <h5> 비밀번호 확인 </h5>
+            <input type="password" maxLength="15" name="signup_pswCheck" />
+          </div>
+        </div>
+
+        <div id="signup_section">
+          {/* 이름 */}
+          <div>
+            <h5> 이름 </h5>
+            <input type="text" maxLength="10" name="signup_name" />
+          </div>
+
+          {/* 생년월일 */}
+          <div>
+            <h5> 생년월일 </h5>
+            <input type="text" maxLength="6" name="signup_birthday" /> -
+            <input type="text" maxLength="1" name="signup_sex" /> ******
+          </div>
+
+          {/* 이메일*/}
+          <div>
+            <h5> 이메일 </h5>
+            <input type="text" maxLength="15" name="signup_email" /> @
+            <select name="signup_email_select">
+              <option value="gmail.com"> gmail.com </option>
+              <option value="naver.com"> naver.com </option>
+              <option value="sunmoon.ac.kr"> sunmoon.ac.kr </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
       <div>
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={form.password}
-          onChange={handleChange}
-        />
+        <input type="button" value="가입하기" name="sigunup_submit" />
       </div>
-      <div>
-        <label>Confirm Password:</label>
-        <input
-          type="password"
-          name="confirmPassword"
-          value={form.confirmPassword}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label>Name:</label>
-        <input
-          type="text"
-          name="name"
-          value={form.name}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label>birthday:</label>
-        <input
-          type="DataTypes.DATE"
-          name="birthday"
-          value={form.password}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label>Phone:</label>
-        <input
-          type="text"
-          name="phone"
-          value={form.phone}
-          onChange={handleChange}
-        />
-      </div>
-      <button type="submit">Sign Up</button>
-    </form>
+    </div>
   );
 }
+//     <form onSubmit={handleSubmit}>
+//       <div>
+//         <h1 className={styles.Z3r0F1ag}>Z3r0F1ag</h1>
+//         <label>Email:</label>
+//         <input
+//           type="email"
+//           name="email"
+//           value={form.email}
+//           onChange={handleChange}
+//         />
+//       </div>
+//       <div>
+//         <label>Password:</label>
+//         <input
+//           type="password"
+//           name="password"
+//           value={form.password}
+//           onChange={handleChange}
+//         />
+//       </div>
+//       <div>
+//         <label>Confirm Password:</label>
+//         <input
+//           type="password"
+//           name="confirmPassword"
+//           value={form.confirmPassword}
+//           onChange={handleChange}
+//         />
+//       </div>
+//       <div>
+//         <label>Name:</label>
+//         <input
+//           type="text"
+//           name="name"
+//           value={form.name}
+//           onChange={handleChange}
+//         />
+//       </div>
+//       <div>
+//         <label>birthday:</label>
+//         <input
+//           type="DataTypes.DATE"
+//           name="birthday"
+//           value={form.birthday}
+//           onChange={handleChange}
+//         />
+//       </div>
+//       <div>
+//         <label>Phone:</label>
+//         <input
+//           type="text"
+//           name="phone"
+//           value={form.phone}
+//           onChange={handleChange}
+//         />
+//       </div>
+//       <button type="submit">Sign Up</button>
+//     </form>
+//   );
+// }
 
 export default SignUp;

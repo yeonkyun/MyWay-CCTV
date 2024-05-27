@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import styles from "./LoginForm.module.css";
+import styles from "../Styles/LoginForm.module.css";
 import { Link } from "react-router-dom";
 // import SignUp from "./SignUp";
 
