@@ -7,6 +7,7 @@ import styles from "../Styles/Login.module.css";
 import SignUp from "./SignUp";
 import SurchId from "./SurchId";
 import Home from "./Home";
+import Notice from "./Notice";
 
 function Login() {
   const [user, setUser] = useState(null);
@@ -41,6 +42,7 @@ function Login() {
           <Route path="/회원가입" element={<SignUp SignUp={SignUp} />} />
           <Route path="/login" element={<LoginForm login={login} />} />
           <Route path="아이디찾기" element={<SurchId SurchId={SurchId} />} />
+          <Route path="공지사항" element={<Notice Notice={Notice} />} />
           {/* <Route path="비밀번호찾기" element={<SurchPw SurchPw={SurchPw} />} /> */}
         </Routes>
       </main>

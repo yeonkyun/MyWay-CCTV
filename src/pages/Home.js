@@ -3,6 +3,7 @@ import Cctv from "../components/Cctv.js";
 import Smallcctv from "../components/Smallcctv.js";
 import Kakao from "../components/Kakao.js";
 import Btn_menu from "../components/sidebar/Btn_menu.js";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -26,10 +27,14 @@ function Home() {
             img_src={"image/baseline_star_black_24dp.jpg"}
             alt_text="star"
           />
-          <Btn_menu
-            img_src={"image/baseline_more_horiz_black_24dp.jpg"}
-            alt_text="더보기"
-          />
+          <li>
+            <Link to="/공지사항">
+              <img
+                src="image/baseline_more_horiz_black_24dp.jpg"
+                alt="더보기"
+              />
+            </Link>
+          </li>
         </ul>
       </header>
       <div className={styles.container}>
