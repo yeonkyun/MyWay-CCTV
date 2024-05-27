@@ -1,12 +1,11 @@
-import { BrowserRouter as Router } from "react-router-dom";
 import React from "react";
-import App from "./App";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom"; // BrowserRouter import
+import App from "./App";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <Router>
+ReactDOM.render(
+  <BrowserRouter>
     <App />
-  </Router>
+  </BrowserRouter>,
+  document.getElementById("root")
 );
-db.User = require("./user")(sequelize, Sequelize);
