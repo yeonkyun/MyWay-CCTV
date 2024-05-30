@@ -21,7 +21,7 @@ function Login() {
 
   return (
     <div>
-      <header className={styles.header}>
+      <header>
         <Link to="/" className={styles.Z3r0F1agLink}>
           Z3r0F1ag
         </Link>

@@ -2,10 +2,17 @@ import styles from "../Styles/Home.module.css";
 import Cctv from "../components/Cctv.js";
 import Smallcctv from "../components/Smallcctv.js";
 import Kakao from "../components/Kakao.js";
-import Btn_menu from "../components/sidebar/Btn_menu.js";
 import { Link } from "react-router-dom";
+import Btn_menu from "./Btn_menu.js";
+import React, { useState } from "react";
 
 function Home() {
+  const [showSearch, setShowSearch] = useState(false);
+
+  const handleSearchClick = () => {
+    setShowSearch(!showSearch);
+  };
+
   return (
     <div className={styles.mainContainer}>
       <header className={styles.menubar}>
@@ -13,30 +20,45 @@ function Home() {
           <a href="http://localhost:3000/">
             <img
               className={styles.home_icon}
-              src="image\baseline_home_black_24dp.jpg"
+              src="image/baseline_home_black_24dp.jpg"
               alt="logo"
             />
           </a>
         </h1>
         <ul className={styles.list_navbar}>
-          <Btn_menu
-            img_src={"image/baseline_search_black_24dp.jpg"}
-            alt_text="search"
-          />
-          <Btn_menu
-            img_src={"image/baseline_star_black_24dp.jpg"}
-            alt_text="star"
-          />
           <li>
-            <Link to="/공지사항">
-              <img
-                src="image/baseline_more_horiz_black_24dp.jpg"
-                alt="더보기"
+            <Btn_menu
+              img_src={"image/baseline_search_black_24dp.jpg"}
+              alt_text="search"
+              onClick={handleSearchClick}
+            />
+          </li>
+          <li>
+            <Btn_menu
+              img_src={"image/baseline_star_black_24dp.jpg"}
+              alt_text="star"
+            />
+          </li>
+          <li>
+            <Link to="/공지사항" className={styles.add_icon}>
+              <Btn_menu
+                img_src={"image/baseline_more_horiz_black_24dp.jpg"}
+                alt_text="더보기"
               />
             </Link>
           </li>
         </ul>
       </header>
+      {showSearch && (
+        <div className={styles.searchContainer}>
+          <input
+            type="text"
+            placeholder="Search..."
+            className={styles.searchInput}
+          />
+          <button className={styles.searchButton}>Search</button>
+        </div>
+      )}
       <div className={styles.container}>
         <div className={styles.map_wrap}>
           <Kakao />

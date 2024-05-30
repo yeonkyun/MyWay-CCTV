@@ -1,13 +1,62 @@
-const users = [
-  { email: "yu@test.com", password: "123", name: "yu" },
-  { email: "lee@test.com", password: "456", name: "Lee" },
-  { email: "park@test.com", password: "789", name: "Park" },
-];
+module.exports = (sequelize, DataTypes) => {
+  return sequelize.define(
+    "user",
+    {
+      user_id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false,
+      },
 
-export function signIn({ email, password }) {
-  const user = users.find(
-    (user) => user.email === email && user.password === password
+      admin: {
+        type: DataTypes.STRING(3),
+        allowNull: false,
+      },
+
+      id: {
+        type: DataTypes.STRING(30),
+        allowNull: false,
+      },
+
+      password: {
+        type: DataTypes.STRING(100),
+        allowNull: false,
+      },
+
+      name: {
+        type: DataTypes.STRING(20),
+        allowNull: false,
+        defaultValue: 0,
+      },
+
+      birthday: {
+        type: DataTypes.INTEGER(10),
+        allowNull: false,
+        defaultValue: 0,
+      },
+
+      sex: {
+        type: DataTypes.INTEGER(1),
+        allowNull: false,
+        defaultValue: 0,
+      },
+
+      email: {
+        type: DataTypes.STRING(40),
+        allowNull: false,
+        defaultValue: 0,
+      },
+
+      signup_date: {
+        type: DataTypes.DATE,
+        allowNull: false,
+      },
+    },
+    {
+      charset: "utf8",
+      collate: "utf8_general_ci",
+      timestamps: false,
+    }
   );
-  if (user === undefined) throw new Error();
-  return user;
-}
+};

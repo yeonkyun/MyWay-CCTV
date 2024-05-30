@@ -67,7 +67,7 @@ function Notice() {
       />
       <ul>
         {filteredNotices.map((notice, index) => (
-          <li key={notice.id}>
+          <li key={notice.id} className={styles.li}>
             <div
               onClick={() => handleNoticeClick(notice)}
               className={styles.NoticeContent}
