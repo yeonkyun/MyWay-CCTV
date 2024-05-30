@@ -1,3 +1,9 @@
+.div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 35%;
+}
 .Z3r0F1ag {
   font-size: 100px;
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Routes, Route, Link } from "react-router-dom"; // useNavigate 삭제
+import { Routes, Route } from "react-router-dom";
 import { signIn } from "../user";
 import LoginForm from "./LoginForm";
 import LogoutButton from "./LogoutButton";
@@ -8,6 +8,7 @@ import SignUp from "./SignUp";
 import SurchId from "./SurchId";
 import Home from "./Home";
 import Notice from "./Notice";
+import Layout from "./Layout";
 
 function Login() {
   const [user, setUser] = useState(null);
@@ -20,30 +21,17 @@ function Login() {
   const logout = () => setUser(null);
 
   return (
-    <div>
-      <header>
-        <Link to="/" className={styles.Z3r0F1agLink}>
-          Z3r0F1ag
-        </Link>
-        {authenticated ? (
-          <LogoutButton logout={logout} />
-        ) : (
-          <>
-            <Link to="/login" className={styles.LoginLink}>
-              Login
-            </Link>
-          </>
-        )}
-      </header>
-      <hr />
+    <div className={styles.div}>
       <main className={styles.main}>
         <Routes>
-          <Route path="/" element={<Home Home={Home} />} />
-          <Route path="/회원가입" element={<SignUp SignUp={SignUp} />} />
-          <Route path="/login" element={<LoginForm login={login} />} />
-          <Route path="아이디찾기" element={<SurchId SurchId={SurchId} />} />
-          <Route path="공지사항" element={<Notice Notice={Notice} />} />
-          {/* <Route path="비밀번호찾기" element={<SurchPw SurchPw={SurchPw} />} /> */}
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="회원가입" element={<SignUp />} />
+            <Route path="login" element={<LoginForm login={login} />} />
+            <Route path="아이디찾기" element={<SurchId />} />
+            <Route path="공지사항" element={<Notice />} />
+            {/* <Route path="비밀번호찾기" element={<SurchPw />} /> */}
+          </Route>
         </Routes>
       </main>
     </div>
