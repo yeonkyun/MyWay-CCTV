@@ -1,5 +1,21 @@
 .cctv {
-  width: 33.1%;
-  height: 33.3%;
-  border: 1px solid black;
+  width: 100px; /* 원하는 크기로 설정 */
+  height: 100px; /* 원하는 크기로 설정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .cctv {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+} */
+
+.video-js {
+  width: 100%; /* 비디오 요소의 너비를 컨테이너에 맞춤 */
+  height: 100%; /* 비디오 요소의 높이를 컨테이너에 맞춤 */
 }
