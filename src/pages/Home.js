@@ -1,23 +1,15 @@
 import React, { useState } from "react";
-import styles from "../Styles/Home.module.css";
+import styles from "../Styles/Home.module.css"; // 대소문자를 맞춰서 경로 수정
 import Cctv from "../components/Cctv.js";
-import Smallcctv from "../components/Smallcctv.js"; // 사용되지 않음
 import Kakao from "../components/Kakao.js";
 
 function Home() {
   const [showCctv, setShowCctv] = useState(false); // 초기값을 false로 설정
-  const [cctvCount, setCctvCount] = useState(0); // CCTV 개수를 저장하는 상태 변수
+  const [cctvCount, setCctvCount] = useState(5); // 초기 CCTV 개수를 설정
 
   const toggleCctvVisibility = () => {
     setShowCctv(!showCctv);
   };
-
-  const addCctv = () => {
-    setCctvCount(cctvCount + 1);
-  };
-
-  console.log("Show CCTV:", showCctv);
-  console.log("CCTV Count:", cctvCount);
 
   return (
     <div className={styles.container}>
@@ -30,17 +22,12 @@ function Home() {
       {showCctv && (
         <div className={styles.cctvContainer}>
           {cctvCount > 0 && (
-            <div
-              className={cctvCount === 1 ? styles.largeCctv : styles.cctvGrid}
-            >
-              {[...Array(cctvCount)].map((_, index) => (
+            <div className={cctvCount > 1 ? styles.cctvGrid : styles.largeCctv}>
+              {Array.from({ length: cctvCount }).map((_, index) => (
                 <Cctv key={index} />
               ))}
             </div>
           )}
-          <button onClick={addCctv} className={styles.addButton}>
-            Add CCTV
-          </button>
         </div>
       )}
     </div>

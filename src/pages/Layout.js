@@ -8,19 +8,57 @@ const Layout = () => {
   const [activeButton, setActiveButton] = useState(null);
   const [startLocation, setStartLocation] = useState("");
   const [endLocation, setEndLocation] = useState("");
+  const [mapVisible, setMapVisible] = useState(false);
+  const [showBookmark, setShowBookmark] = useState(false);
 
   const toggleSearch = () => {
-    setShowSearch(!showSearch);
+    setShowSearch((prev) => {
+      if (!prev) {
+        setShowBookmark(false);
+        setMapVisible(true);
+      } else {
+        setMapVisible(false);
+      }
+      return !prev;
+    });
+  };
+
+  const toggleBookmark = () => {
+    setShowBookmark((prev) => {
+      if (!prev) {
+        setShowSearch(false);
+        setMapVisible(true);
+      } else {
+        setMapVisible(false);
+      }
+      return !prev;
+    });
   };
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
+    // 클릭한 버튼에 따라 다른 작업 수행 (예: 서브페이지로 이동)
+    // 예: if (buttonName === 'login') history.push('/login');
   };
 
   const handleSearch = () => {
     console.log("Start:", startLocation);
     console.log("End:", endLocation);
     // 검색 로직 추가
+  };
+
+  const handleLoginClick = () => {
+    setShowSearch(false);
+    setShowBookmark(false);
+    setMapVisible(true);
+    // 로그인 버튼을 눌렀을 때의 작업 추가
+  };
+
+  const handleNoticeClick = () => {
+    setShowSearch(false);
+    setShowBookmark(false);
+    setMapVisible(true);
+    // 공지사항 버튼을 눌렀을 때의 작업 추가
   };
 
   return (
@@ -44,7 +82,7 @@ const Layout = () => {
               alt_text="search"
               onClick={() => {
                 toggleSearch();
-                handleButtonClick("search");
+                setActiveButton("search");
               }}
             />
           </li>
@@ -52,7 +90,10 @@ const Layout = () => {
             <Btn_menu
               img_src={"image/baseline_star_black_24dp.jpg"}
               alt_text="star"
-              onClick={() => handleButtonClick("star")}
+              onClick={() => {
+                toggleBookmark();
+                setActiveButton("star");
+              }}
             />
           </li>
           <li
@@ -63,7 +104,10 @@ const Layout = () => {
             <Link
               to="/login"
               className={styles.login}
-              onClick={() => handleButtonClick("login")}
+              onClick={() => {
+                handleButtonClick("login");
+                handleLoginClick();
+              }}
             >
               <Btn_menu img_src={"image/user.png"} alt_text="로그인" />
             </Link>
@@ -72,7 +116,10 @@ const Layout = () => {
             <Link
               to="/공지사항"
               className={styles.add_icon}
-              onClick={() => handleButtonClick("more")}
+              onClick={() => {
+                handleButtonClick("more");
+                handleNoticeClick();
+              }}
             >
               <Btn_menu
                 img_src={"image/baseline_more_horiz_black_24dp.jpg"}
@@ -86,14 +133,14 @@ const Layout = () => {
         <div className={styles.searchContainer}>
           <input
             type="text"
-            placeholder="Start location"
+            placeholder="출발지"
             value={startLocation}
             onChange={(e) => setStartLocation(e.target.value)}
             className={styles.searchInput}
           />
           <input
             type="text"
-            placeholder="End location"
+            placeholder="도착지"
             value={endLocation}
             onChange={(e) => setEndLocation(e.target.value)}
             className={styles.searchInput}
@@ -101,9 +148,22 @@ const Layout = () => {
           <button onClick={handleSearch} className={styles.searchButton}>
             Search
           </button>
-          <div onClick={toggleSearch} className={styles.closeButton}></div>
+          <div onClick={toggleSearch} className={styles.closeButton}>
+            <img src="image/x.png" alt="닫기" />
+          </div>
         </div>
       )}
+
+      {showBookmark && (
+        <div className={styles.bookmarkContainer}>
+          <h2>북마크된 항목</h2>
+          {/* 북마크된 항목 리스트를 추가하세요 */}
+          <div onClick={toggleBookmark} className={styles.closeButton}>
+            <img src="image/x.png" alt="닫기" />
+          </div>
+        </div>
+      )}
+      
       <Outlet /> {/* This is where the nested routes will render */}
     </div>
   );
