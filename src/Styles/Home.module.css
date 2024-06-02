@@ -31,11 +31,10 @@
   align-items: flex-start;
 }
 
-
 .toggleButton {
-  position: absolute; /*절대 위치 지정8/
+  position: absolute; /*절대 위치 지정*/
   /* top: 7%; 화면의 가운데에 위치시키기 */
-  /* margin-left: 45%; */
+  margin-left: 45%;
   /* transform: translateY(-50%); 세로 방향 중앙 정렬 */
   height: 50px;
   padding: 10px 10px;
@@ -71,13 +70,14 @@
   align-items: center;
   gap: 150px;
 }
-.cctvContainer{
+.cctvContainer {
   width: 600px;
   height: 800;
   padding: 20px;
   background-color: #ffffff;
   border-radius: 20px;
-  box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.1), 0px 10px 10px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.1),
+    0px 10px 10px 10px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease;
   z-index: 2;
   position: relative;

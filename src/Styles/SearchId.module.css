@@ -1,0 +1,23 @@
+.Z3r0F1ag {
+  font-size: 100px;
+  /* text-align: center; */
+  /* margin-left: ; */
+}
+.container {
+  width: 100%;
+  position: absolute; /*절대 위치 지정*/
+  top: 10%;
+  left: 40%;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  flex-direction: column;
+}
+
+.emailbox {
+  margin-left: 80px;
+}
+.searchid {
+  margin-left: 80px;
+  width: 220px;
+}

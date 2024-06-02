@@ -1,4 +1,4 @@
-import styles from "../Styles/SurchId.module.css";
+import styles from "../Styles/SearchId.module.css";
 import React, { useState } from "react";
 
 function SurchId() {
@@ -36,7 +36,7 @@ function SurchId() {
       <h1 className={styles.Z3r0F1ag}>Z3r0F1ag</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Email:</label>
+          <label className={styles.emailbox}>Email:</label>
           <input
             type="email"
             name="email"
@@ -44,7 +44,9 @@ function SurchId() {
             onChange={handleChange}
           />
         </div>
-        <button type="submit">Search ID</button>
+        <button type="submit" className={styles.searchid}>
+          Search ID
+        </button>
       </form>
       {userId && (
         <div className={styles.result}>

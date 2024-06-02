@@ -1,10 +1,7 @@
-import styles from './Smallcctv.module.css';
+import styles from "./Smallcctv.module.css";
 
 function Smallcctv() {
-
-  return (
-    <div className={styles.smallcctv}></div>
-  )
+  return <div className={styles.smallcctv}></div>;
 }
 
-export default Smallcctv
+export default Smallcctv;
