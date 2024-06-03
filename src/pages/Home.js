@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "../Styles/Home.module.css"; // 대소문자를 맞춰서 경로 수정
-import styles from "../Styles/Home.module.css"; // 대소문자를 맞춰서 경로 수정
 import Cctv from "../components/Cctv.js";
 import Kakao from "../components/Kakao.js";
 
@@ -23,8 +22,6 @@ function Home() {
       {showCctv && (
         <div className={styles.cctvContainer}>
           {cctvCount > 0 && (
-            <div className={cctvCount > 1 ? styles.cctvGrid : styles.largeCctv}>
-              {Array.from({ length: cctvCount }).map((_, index) => (
             <div className={cctvCount > 1 ? styles.cctvGrid : styles.largeCctv}>
               {Array.from({ length: cctvCount }).map((_, index) => (
                 <Cctv key={index} />

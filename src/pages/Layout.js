@@ -37,49 +37,58 @@ const Layout = () => {
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
-    // 클릭한 버튼에 따라 다른 작업 수행 (예: 서브페이지로 이동)
-    // 예: if (buttonName === 'login') history.push('/login');
   };
 
   const handleSearch = () => {
     console.log("Start:", startLocation);
     console.log("End:", endLocation);
-    // 검색 로직 추가
   };
 
   const handleLoginClick = () => {
     setShowSearch(false);
     setShowBookmark(false);
     setMapVisible(true);
-    // 로그인 버튼을 눌렀을 때의 작업 추가
   };
 
   const handleNoticeClick = () => {
     setShowSearch(false);
     setShowBookmark(false);
     setMapVisible(true);
-    // 공지사항 버튼을 눌렀을 때의 작업 추가
+  };
+
+  const handleHomeClick = ()=> {
+    setShowSearch(false);
+    setShowBookmark(false);
+    setMapVisible(true);
   };
 
   return (
     <div className={styles.mainContainer}>
       <header className={styles.menubar}>
-        <h1 className={styles.logo_box}>
-          <a href="/">
-            <img
-              className={styles.home_icon}
-              src="image/baseline_home_black_24dp.jpg"
-              alt="logo"
-            />
-          </a>
-        </h1>
         <ul className={styles.list_navbar}>
+          <li className={activeButton === "home" ? styles.btn_menu_active : ""}>
+            <Link
+              to="/"
+              className={styles.btn_menu}
+              onClick={() => {
+                handleHomeClick();
+                handleButtonClick("home")}}
+              style={{ textDecoration: 'none' }} // Add this line to remove underline
+            >
+              <Btn_menu
+                img_src={"image/baseline_home_black_24dp.jpg"}
+                alt_text="home"
+                text="Home"
+              />
+            </Link>
+          </li>
           <li
             className={activeButton === "search" ? styles.btn_menu_active : ""}
           >
             <Btn_menu
               img_src={"image/baseline_search_black_24dp.jpg"}
               alt_text="search"
+              text="Search"
               onClick={() => {
                 toggleSearch();
                 setActiveButton("search");
@@ -90,6 +99,7 @@ const Layout = () => {
             <Btn_menu
               img_src={"image/baseline_star_black_24dp.jpg"}
               alt_text="star"
+              text="Bookmark"
               onClick={() => {
                 toggleBookmark();
                 setActiveButton("star");
@@ -108,8 +118,9 @@ const Layout = () => {
                 handleButtonClick("login");
                 handleLoginClick();
               }}
+              style={{ textDecoration: 'none' }} // Add this line to remove underline
             >
-              <Btn_menu img_src={"image/user.png"} alt_text="로그인" />
+              <Btn_menu img_src={"image/user.png"} alt_text="로그인" text="Login" />
             </Link>
           </li>
           <li className={activeButton === "more" ? styles.btn_menu_active : ""}>
@@ -120,10 +131,12 @@ const Layout = () => {
                 handleButtonClick("more");
                 handleNoticeClick();
               }}
+              style={{ textDecoration: 'none' }} // Add this line to remove underline
             >
               <Btn_menu
                 img_src={"image/baseline_more_horiz_black_24dp.jpg"}
                 alt_text="더보기"
+                text="More"
               />
             </Link>
           </li>
@@ -163,7 +176,7 @@ const Layout = () => {
           </div>
         </div>
       )}
-      
+
       <Outlet /> {/* This is where the nested routes will render */}
     </div>
   );
