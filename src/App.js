@@ -1,9 +1,11 @@
-import GetMap from './components/GetMap';
+import React, { useEffect, useState } from 'react';
+import KakaoMap from './components/Map/KakaoMap';
 
 function App() {
+
   return (
     <div>
-      <GetMap />
+      <KakaoMap />
     </div>
   );
 }

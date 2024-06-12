@@ -1,0 +1,27 @@
+/* 화면 전체를 채우도록 body와 html의 높이와 너비 설정 */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 지도 컨테이너를 화면의 가운데에 위치시키기 */
+.kakao-map-container {
+  width: 100%; /* 뷰포트 너비의 100% */
+  height: 100vh; /* 뷰포트 높이의 100% */
+}
+
+
+/* 중소형 디바이스 (태블릿)를 위한 스타일 */
+@media (max-width: 768px) {
+  .kakao-map-container {
+    height: 60vh; /* 화면 높이의 60%를 차지합니다. */
+  }
+}
+
+/* 소형 디바이스 (모바일)를 위한 스타일 */
+@media (max-width: 480px) {
+  .kakao-map-container {
+    height: 70vh; /* 화면 높이의 70%를 차지합니다. */
+  }
+}
