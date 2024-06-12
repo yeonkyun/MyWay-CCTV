@@ -6,7 +6,7 @@
 }
 
 .li_login {
-  margin-top: 480px;
+  margin-top: 550px;
 }
 
 .menubar {
@@ -14,7 +14,7 @@
   flex-direction: column;
   align-items: center;
   overflow: auto;
-  width: 80px;
+  width: 63px;
   height: 100%;
   padding: 0;
   margin: 0;
@@ -35,11 +35,11 @@
 
 .logo_box {
   display: flex;
-  width: 80px;
+  width: 60px;
+  height: 80px;
   flex: 0 0 auto;
   justify-content: center;
   align-items: center;
-  height: 80px;
   background-color: white;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
@@ -49,7 +49,7 @@
 li {
   display: flex;
   width: 100%;
-  height: 80px;
+  height: 63px;
   justify-content: center;
   align-items: center;
   background-color: white;
@@ -104,12 +104,6 @@ li {
   align-items: flex-start;
 }
 
-.smallContainer {
-  display: flex;
-  flex-direction: row;
-  height: 15%;
-}
-
 .toggleButton {
   margin: 20px;
   padding: 10px 20px;
@@ -126,8 +120,8 @@ li {
 
 /* 추가된 부분 */
 .searchContainer {
-  margin-left: 82px;
-  height: 95%;
+  margin-left: 64px;
+  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -142,8 +136,8 @@ li {
 }
 
 .bookmarkContainer {
-  margin-left: 82px;
-  height: 88%;
+  margin-left: 64px;
+  height: 775px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -240,6 +234,6 @@ li {
 }
 
 .btn_menu_active {
-  background-color: #f0f0f0;
-  border-radius: 50%;
+  background-color: #d2d2d2;
+  border-radius: 10%;
 }

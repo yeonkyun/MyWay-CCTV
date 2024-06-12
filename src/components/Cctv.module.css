@@ -1,13 +1,14 @@
-.cctv {
-  width: 85%; /* 원하는 크기로 설정 */
-  height: 100px; /* 원하는 크기로 설정 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 60px;
-}
-.video-js {
-  width: 100%; /* 비디오 요소의 너비를 컨테이너에 맞춤 */
-  height: 100%; /* 비디오 요소의 높이를 컨테이너에 맞춤 */
+.cctvItem {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  position: relative;
 }
 
+.cctvItem video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

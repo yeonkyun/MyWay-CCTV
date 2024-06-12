@@ -2,22 +2,21 @@ import React, { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import styles from "../Styles/Layout.module.css"; // layout 스타일 가져오기
 import Btn_menu from "./Btn_menu"; // Btn_menu 경로가 올바른지 확인
+import CCTV from "../components/Cctv"; // CCTV 컴포넌트 가져오기
 
 const Layout = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [activeButton, setActiveButton] = useState(null);
   const [startLocation, setStartLocation] = useState("");
   const [endLocation, setEndLocation] = useState("");
-  const [mapVisible, setMapVisible] = useState(false);
+  const [showCCTV, setShowCCTV] = useState(false);
   const [showBookmark, setShowBookmark] = useState(false);
 
   const toggleSearch = () => {
     setShowSearch((prev) => {
       if (!prev) {
         setShowBookmark(false);
-        setMapVisible(true);
-      } else {
-        setMapVisible(false);
+        setShowCCTV(false);
       }
       return !prev;
     });
@@ -27,9 +26,17 @@ const Layout = () => {
     setShowBookmark((prev) => {
       if (!prev) {
         setShowSearch(false);
-        setMapVisible(true);
-      } else {
-        setMapVisible(false);
+        setShowCCTV(false);
+      }
+      return !prev;
+    });
+  };
+
+  const toggleCCTV = () => {
+    setShowCCTV((prev) => {
+      if (!prev) {
+        setShowSearch(false);
+        setShowBookmark(false);
       }
       return !prev;
     });
@@ -37,28 +44,23 @@ const Layout = () => {
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
-    // 클릭한 버튼에 따라 다른 작업 수행 (예: 서브페이지로 이동)
-    // 예: if (buttonName === 'login') history.push('/login');
   };
 
   const handleSearch = () => {
     console.log("Start:", startLocation);
     console.log("End:", endLocation);
-    // 검색 로직 추가
   };
 
   const handleLoginClick = () => {
     setShowSearch(false);
     setShowBookmark(false);
-    setMapVisible(true);
-    // 로그인 버튼을 눌렀을 때의 작업 추가
+    setShowCCTV(false);
   };
 
   const handleNoticeClick = () => {
     setShowSearch(false);
     setShowBookmark(false);
-    setMapVisible(true);
-    // 공지사항 버튼을 눌렀을 때의 작업 추가
+    setShowCCTV(false);
   };
 
   return (
@@ -70,6 +72,7 @@ const Layout = () => {
               className={styles.home_icon}
               src="image/baseline_home_black_24dp.jpg"
               alt="logo"
+              style={{ width: "48px", height: "48px" }} // 이미지 크기 조정
             />
           </a>
         </h1>
@@ -96,6 +99,7 @@ const Layout = () => {
               }}
             />
           </li>
+
           <li
             className={`${styles.li_login} ${
               activeButton === "login" ? styles.btn_menu_active : ""
@@ -108,6 +112,7 @@ const Layout = () => {
                 handleButtonClick("login");
                 handleLoginClick();
               }}
+              style={{ textDecoration: "none" }} // 텍스트 밑줄 제거
             >
               <Btn_menu img_src={"image/user.png"} alt_text="로그인" />
             </Link>
@@ -120,6 +125,7 @@ const Layout = () => {
                 handleButtonClick("more");
                 handleNoticeClick();
               }}
+              style={{ textDecoration: "none" }} // 텍스트 밑줄 제거
             >
               <Btn_menu
                 img_src={"image/baseline_more_horiz_black_24dp.jpg"}
@@ -149,21 +155,30 @@ const Layout = () => {
             Search
           </button>
           <div onClick={toggleSearch} className={styles.closeButton}>
-            <img src="image/x.png" alt="닫기" />
+            <img
+              src="image/x.png"
+              alt="닫기"
+              style={{ width: "24px", height: "24px" }}
+            />{" "}
+            {/* 이미지 크기 조정 */}
           </div>
         </div>
       )}
-
       {showBookmark && (
         <div className={styles.bookmarkContainer}>
           <h2>북마크된 항목</h2>
           {/* 북마크된 항목 리스트를 추가하세요 */}
           <div onClick={toggleBookmark} className={styles.closeButton}>
-            <img src="image/x.png" alt="닫기" />
+            <img
+              src="image/x.png"
+              alt="닫기"
+              style={{ width: "24px", height: "24px" }}
+            />{" "}
+            {/* 이미지 크기 조정 */}
           </div>
         </div>
       )}
-      
+      {showCCTV && <CCTV />}
       <Outlet /> {/* This is where the nested routes will render */}
     </div>
   );

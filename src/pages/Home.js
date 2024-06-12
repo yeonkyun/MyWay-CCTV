@@ -1,15 +1,28 @@
 import React, { useState } from "react";
-import styles from "../Styles/Home.module.css"; // 대소문자를 맞춰서 경로 수정
+import styles from "../Styles/Home.module.css";
 import Cctv from "../components/Cctv.js";
 import Kakao from "../components/Kakao.js";
 
 function Home() {
-  const [showCctv, setShowCctv] = useState(false); // 초기값을 false로 설정
-  const [cctvCount, setCctvCount] = useState(5); // 초기 CCTV 개수를 설정
+  const [showCctv, setShowCctv] = useState(false);
+  const [cctvCount, setCctvCount] = useState(9);
 
   const toggleCctvVisibility = () => {
     setShowCctv(!showCctv);
   };
+
+  // 이미지 경로 배열
+  const imagePaths = [
+    "image/1.공단 삼거리.png",
+    "image/2.개목삼거리.png",
+    "image/3.고속철입구.png",
+    "image/4.고속도로 입구 삼거리.png",
+    "image/5.교보삼거리.png",
+    "image/6.구 동방주유소 앞.png",
+    "image/7.구상골 사거리.png",
+    "image/8. 구정사거리.png",
+    "image/9. 국지도 23호선.png",
+  ];
 
   return (
     <div className={styles.container}>
@@ -21,13 +34,15 @@ function Home() {
       </button>
       {showCctv && (
         <div className={styles.cctvContainer}>
-          {cctvCount > 0 && (
-            <div className={cctvCount > 1 ? styles.cctvGrid : styles.largeCctv}>
-              {Array.from({ length: cctvCount }).map((_, index) => (
-                <Cctv key={index} />
-              ))}
-            </div>
-          )}
+          <div className={styles.cctvGrid}>
+            {Array.from({ length: cctvCount }).map((_, index) => (
+              <img
+                key={index}
+                className={styles.tempImage}
+                src={imagePaths[index % imagePaths.length]} // 이미지 경로 설정
+              />
+            ))}
+          </div>
         </div>
       )}
     </div>
